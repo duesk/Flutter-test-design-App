@@ -1,4 +1,4 @@
-#Thu Jan 23 17:36:33 CST 2020
-base.0=/home/rafael/Escritorio/hola/design/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+#Sun Feb 09 16:39:04 CST 2020
+base.0=/home/rafael/Documentos/Flutter-test-design-App/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
