@@ -10,10 +10,29 @@ class BotonesPage extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           _fondoApp(),
+          SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                _titulos()
+              ],
+            ) ,
+          ),
         ],
       ),
 
     );
+  }
+
+  Widget _titulos(){
+    return SafeArea(
+          child: Container(
+        child: Column(children: <Widget>[
+          Text("Titulo uno ", style: TextStyle(color: Colors.white, ),),
+          Text("Titulo dos ")
+        ],)
+      ),
+    );
+
   }
 
   Widget _fondoApp(){
