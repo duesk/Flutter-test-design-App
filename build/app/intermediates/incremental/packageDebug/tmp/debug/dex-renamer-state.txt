@@ -1,4 +1,0 @@
-#Sun Feb 09 22:24:00 CST 2020
-base.0=/home/rafael/Documentos/Flutter-test-design-App/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
