@@ -13,22 +13,100 @@ class BotonesPage extends StatelessWidget {
           SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                _titulos()
+                _titulos(),
+                _botonesRedondeados()
               ],
             ) ,
           ),
         ],
       ),
-
+      bottomNavigationBar: _bottomNavigationBar()
     );
+  }
+
+  /*
+
+   */
+
+  Widget _botonesRedondeados(){
+    return Table(
+      children: [
+        TableRow(
+          children: [
+            _crearBotonesRedondeados(),
+            _crearBotonesRedondeados()
+          ]
+        ),
+        TableRow(
+          children: [
+            _crearBotonesRedondeados(),
+            _crearBotonesRedondeados()
+          ]
+        ),
+        TableRow(
+          children: [
+            _crearBotonesRedondeados(),
+            _crearBotonesRedondeados()
+          ]
+        )
+        ,    TableRow(
+          children: [
+            _crearBotonesRedondeados(),
+            _crearBotonesRedondeados()
+          ]
+        )
+      ]
+    );
+
+  }
+
+  Widget _crearBotonesRedondeados(){
+    return Container(
+      height: 180.0,
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color: Color.fromRGBO(62, 66, 107, 0.7),
+        borderRadius: BorderRadius.circular(20.0)
+      ),
+    );
+    
+  }
+
+  Widget _bottomNavigationBar(){
+    return BottomNavigationBar(
+        backgroundColor: Color.fromRGBO(55, 57,84, 1.0),
+        selectedItemColor: Colors.pinkAccent,
+        unselectedItemColor: Color.fromRGBO(116, 117, 156, 1.0)
+        ,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_today ),
+            title: Container()
+            //title: Text("hola")
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bubble_chart ),
+            title: Container()  // si no quiero ponerle titulo  uso un container 
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.supervised_user_circle ),
+            title: Container()  // si no quiero ponerle titulo  uso un container 
+          ),
+        ]
+      );
+
   }
 
   Widget _titulos(){
     return SafeArea(
-          child: Container(
-        child: Column(children: <Widget>[
-          Text("Titulo uno ", style: TextStyle(color: Colors.white, ),),
-          Text("Titulo dos ")
+      child: Container(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text("Classify  transaction", style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold,)),
+            SizedBox(height: 10.0,),
+            Text("Classofy this transaction into a particular category ", style: TextStyle(color: Colors.white, fontSize: 18.0))
         ],)
       ),
     );
