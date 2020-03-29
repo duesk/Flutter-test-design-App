@@ -1,6 +1,9 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+
+
+import 'dart:math';
+import 'dart:ui';
+
 
 class BotonesPage extends StatelessWidget {
   
@@ -33,26 +36,26 @@ class BotonesPage extends StatelessWidget {
       children: [
         TableRow(
           children: [
-            _crearBotonesRedondeados(),
-            _crearBotonesRedondeados()
+            _crearBotonesRedondeados(Colors.blue, Icons.border_all, "General"),
+            _crearBotonesRedondeados(Colors.purpleAccent, Icons.directions_bus, "Bus")
           ]
         ),
         TableRow(
           children: [
-            _crearBotonesRedondeados(),
-            _crearBotonesRedondeados()
+            _crearBotonesRedondeados(Colors.pinkAccent, Icons.shop, "Buy"),
+            _crearBotonesRedondeados(Colors.orange, Icons.insert_drive_file, "File")
           ]
         ),
         TableRow(
           children: [
-            _crearBotonesRedondeados(),
-            _crearBotonesRedondeados()
+            _crearBotonesRedondeados(Colors.blueAccent, Icons.movie_filter, "Movie"),
+            _crearBotonesRedondeados(Colors.green, Icons.cloud, "Grocery")
           ]
         )
         ,    TableRow(
           children: [
-            _crearBotonesRedondeados(),
-            _crearBotonesRedondeados()
+            _crearBotonesRedondeados(Colors.red, Icons.collections, "Photos"),
+            _crearBotonesRedondeados(Colors.teal, Icons.help_outline, "General")
           ]
         )
       ]
@@ -60,14 +63,34 @@ class BotonesPage extends StatelessWidget {
 
   }
 
-  Widget _crearBotonesRedondeados(){
+  Widget _crearBotonesRedondeados( Color colorIcon, IconData icon, String titulo){
     return Container(
-      height: 180.0,
-      margin: EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-        color: Color.fromRGBO(62, 66, 107, 0.7),
-        borderRadius: BorderRadius.circular(20.0)
+          margin: EdgeInsets.all(10.0),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+              child: Container(
+              height: 180.0,
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(62, 66, 107, 0.7),
+                borderRadius: BorderRadius.circular(20.0)
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  CircleAvatar(
+                    backgroundColor: colorIcon,
+                    radius: 35.0,
+                    child:Icon(icon, color: Colors.white, size: 30.0,),
+                  ),
+                  Text(titulo , style:  TextStyle(color: colorIcon)),
+                  SizedBox(height: 5.0,)
+                ],
+              ),
       ),
+            ),
+          ),
     );
     
   }
